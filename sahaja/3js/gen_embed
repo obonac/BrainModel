@@ -1,4 +1,11 @@
 echo 'To embed the models please refer the link below each model<br>'>index.html
 for n in $(ls ../render/); do cp -f Render.html $n.html; sed -i "s/car_model.stl/${n}/g" $n.html; echo '<iframe src="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/'${n}'.html" width=800 height=600>iframe not supported</iframe>' >$n.embed; cat $n.embed >> index.html; echo '<br><a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/'${n}'.embed">'Embed $n'</a>'>>index.html; echo '<br><a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/'${n}'.html">'View $n'</a><br>'>>index.html; done
 mv index.html view_all.html
-cat view_all.html | grep -v iframe >index.html
+echo '<h2>AyeInterns Portfolio : Winter 2021 cohort - Graphics & Animation</h4>'>>index.html
+echo '<a href="https://sahajaportfolio.github.io" target="new"><h1>Sahaja Katta</h1></a> '>>index.html
+for n in $(ls ../render/); do echo '<a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/'$n'.html"><img src="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/images/'$n'.png" width=400 height=300></img></a>'; done >>index.html
+echo '<br>' >>index.html
+echo '<iframe src="https://sahajaportfolio.github.io" width=100% height=800></iframe><br>'>>index.html
+echo '<a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/view_all.html">View all models (needs at least 8GB RAM and 64 bit browser with WebGL support)</a><br>' >>index.html
+cat view_all.html | grep -v iframe >>index.html
+
