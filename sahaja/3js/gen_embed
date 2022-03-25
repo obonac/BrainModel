@@ -1,0 +1,1 @@
+for n in $(ls ../render/); do cp -f Render.html $n.html; sed -i "s/car_model.stl/${n}/g" $n.html; echo '<iframe src=https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/"'${n}'.html" width=800 height=600>iframe not supported</iframe>' >$n.embed; done
