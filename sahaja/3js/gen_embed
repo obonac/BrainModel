@@ -15,7 +15,11 @@ echo '<iframe src="https://sahajaportfolio.github.io" width=90% height=1200></if
 echo '<a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/view_all.html">View all models (needs at least 8GB RAM and 64 bit browser with WebGL support)</a><br>' >>index.html
 cat view_all.html | grep -v iframe >>index.html
 qrencode -lH -o commit.png 'https://github.com/ayeinterns/ayeinterns-winter2021/pull/1'
-echo '<br><br><a href="https://github.com/ayeinterns/ayeinterns-winter2021/pull/1"><img src="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/commit.png" width=200 height=150></img><br>Proof of Work</a>' >>index.html
+echo '<br><br><a href="https://github.com/ayeinterns/ayeinterns-winter2021/pull/1"><img src="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/commit.png" width=200 height=150></img><br>Proof of Work<br>(Verification)</a>' >>index.html
+
+qrencode -lH -o validation.png 'https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/'
+echo '<br><br><a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/"><img src="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/validation.png" width=200 height=150></img><br>Portfolio<br>(Validation)</a>' >>index.html
+
 echo '<br><br><br>This is a machine generated document. TnC apply as available on <a href="https://ayeai.xyz">AyeAI website</a><br>Generated and atomically committed on '$(date)'<br><br>' >>index.html
 echo '</div>' >>index.html
 git add *
