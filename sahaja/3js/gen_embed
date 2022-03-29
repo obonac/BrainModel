@@ -19,4 +19,5 @@ echo '<br><br><a href="https://github.com/ayeinterns/ayeinterns-winter2021/pull/
 echo '<br><br><br>This is a machine generated document. TnC apply as available on <a href="https://ayeai.xyz">AyeAI website</a><br>Generated and atomically committed on'$(date)'<br><br>' >>index.html
 echo '</div>' >>index.html
 git add *
-git commit -m "Atomic generation and commit of work validation with proof of work link - job ran from $stdt till $(date)" >> index.html
+git commit -m "Atomic generation and commit of work validation with proof of work link - job ran from $stdt till $(date)"
+git push
