@@ -7,7 +7,7 @@ mv index.html view_all.html
 echo '<style> body { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Morris_Granada_velvet.jpg'); justify-content: center; text-align: center; align: center; } </style>' >>index.html
 echo '<div style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/84/Parchment.00.jpg');
  justify-content: center; text-align: center; align: center; width: 95%; margin: auto; border: 5px solid gold; padding: 0;   margin-top: 50px;  margin-bottom: 50px;">'>>index.html
-echo '<img src="https://docs.google.com/drawings/d/e/2PACX-1vQTNxhuxDIeLpNqQ96dH1otHhfC7cv4UR2N0BmE8NRphc6lZKe7xYJ2n2nI96ngXlLv8b2m8XsavyG9/pub?w=144&amp;h=108"><br><h2>AyeInterns Portfolio : Winter 2021 cohort - Graphics & Animation</h2>'>>index.html
+echo '<img src="https://docs.google.com/drawings/d/e/2PACX-1vQTNxhuxDIeLpNqQ96dH1otHhfC7cv4UR2N0BmE8NRphc6lZKe7xYJ2n2nI96ngXlLv8b2m8XsavyG9/pub?w=144&amp;h=108"><br><h2>AyeInterns Portfolio : Winter 2021 Cohort - Graphics & Animation</h2>'>>index.html
 echo '<a href="https://sahajaportfolio.github.io" target="new"><h1>Sahaja Katta</h1></a> '>>index.html
 for n in $(ls ../render/); do echo '<a href="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/3js/'$n'.html"><img src="https://ayeinterns.github.io/ayeinterns-winter2021/sahaja/images/'$n'.png" width=400 height=300></img></a>'; done >>index.html
 echo '<br>' >>index.html
@@ -19,5 +19,9 @@ echo '<br><br><a href="https://github.com/ayeinterns/ayeinterns-winter2021/pull/
 echo '<br><br><br>This is a machine generated document. TnC apply as available on <a href="https://ayeai.xyz">AyeAI website</a><br>Generated and atomically committed on '$(date)'<br><br>' >>index.html
 echo '</div>' >>index.html
 git add *
-git commit -m "Atomic generation and commit of work validation with proof of work link - job ran from $stdt till $(date)"
+git commit -m "Atomic generation and commit of work validation with proof of work link - job ran from $stdt till $(date)" >>seed.txt
+git push >>seed.txt
+cat seed.txt | head -1 >>index.html
+git add *
+git commit -m "Hardening commit at $(date)"
 git push
